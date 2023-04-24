@@ -1,0 +1,12 @@
+to get to login page
+http://127.0.0.1:8000/accounts/login/
+
+if you enter or follow the url 
+http://127.0.0.1:8000/login/ 
+it  takes you to login with google sign but no worry click the sign in link above (not  the one below )
+and it will take you to google auth
+
+django admin login
+Fedora
+Fedora@gmail.com
+Fedora2023

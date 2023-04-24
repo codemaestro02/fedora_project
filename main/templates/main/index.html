@@ -1,0 +1,191 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block links %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/css/index_programs.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+{% endblock links %}
+  
+{% block title %}
+  Login:Fedora Herald
+{% endblock title %}
+
+
+{% block style %}
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+
+  body, html {
+    height: 100%;
+    line-height: 1.8;
+  }
+
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+  }
+
+  .fh-bar .fh-button {
+    padding: 16px;
+  }
+{% endblock style %}
+  
+
+
+{% block content %}
+    <!-- Header with full-height image -->
+  <header class="bgimg-1 fh-display-container fh-grayscale-min" id="home">
+
+    <div class="fh-container" style="padding:128px 16px">
+      <div class="fh-row-padding">
+        <div class="fh-col m6">
+          <h3><strong>Empowering Future Leaders,</strong></h3>
+          <h3><strong>Transforming Africa</strong></h3>
+          <p>Africa is the world's second-largest continent with a rapidly <br> growing population of diverse backgrounds. Of Africa's nearly <br> 420 million youth aged 15-35, one-third are unemployed and <br> only one in six is in wage employment.</p>
+          <p>The project involves introducing Fedora Herald to English speaking countries in Africa.</p>
+          <p>Youths face roughly double the unemployment rate of adults with significant variation by country.</p>
+          <p><a href="#work" class="fh-button fh-black"><i class="fa fa-th">&nbsp;</i> View Our Works</a></p>
+        </div>
+        <div class="fh-col m6">
+          <img class="fh-image fh-round-large" src="{% static 'images/africa-map.png' %}" alt="Buildings" width="700" height="394">
+        </div>
+      </div>
+    </div>
+  
+</header>
+  
+  
+  
+  <!-- Team Section -->
+  <div class="fh-container" style="padding:128px 16px" id="team">
+    <h3 class="fh-center">Our Focus</h3>
+    <p class="fh-center fh-large">Our services span across these focus areas.</p>
+    <div class="fh-row-padding fh-grayscale" style="margin-top:64px">
+      <div class="fh-col l3 m6 fh-margin-bottom">
+        <div class="fh-card">
+          <img src="{% static 'images/africa-map.png' %}" alt="John" style="width:100%">
+          <div class="fh-container">
+            <h3>Youth Development</h3>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="fh-button fh-light-grey fh-block"><i class="fa fa-envelope"></i> Explore</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="fh-col l3 m6 fh-margin-bottom">
+        <div class="fh-card">
+          <img src="{% static 'images/africa-map.png' %}" alt="Jane" style="width:100%">
+          <div class="fh-container">
+            <h3>Youth Employment</h3>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="fh-button fh-light-grey fh-block"><i class="fa fa-envelope"></i> Explore</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="fh-col l3 m6 fh-margin-bottom">
+        <div class="fh-card">
+          <img src="{% static 'images/africa-map.png' %}" alt="Mike" style="width:100%">
+          <div class="fh-container">
+            <h3>Entrepreneurship</h3>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="fh-button fh-light-grey fh-block"><i class="fa fa-envelope"></i> Explore</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="fh-col l3 m6 fh-margin-bottom">
+        <div class="fh-card">
+          <img src="{% static 'images/africa-map.png' %}" alt="Dan" style="width:100%">
+          <div class="fh-container">
+            <h3>Innovation</h3>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="fh-button fh-light-grey fh-block"><i class="fa fa-envelope"></i> Explore</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Promo Section "Statistics" -->
+  <div class="fh-container fh-row fh-center fh-light-blue fh-padding-64">
+    <div class="fh-quarter">
+      <span class="fh-xxlarge">15+</span>
+      <br>Partners
+    </div>
+    <div class="fh-quarter">
+      <span class="fh-xxlarge">10+</span>
+      <br>Projects Done
+    </div>
+    <div class="fh-quarter">
+      <span class="fh-xxlarge">89+</span>
+      <br>Clients
+    </div>
+    <div class="fh-quarter">
+      <span class="fh-xxlarge">150+</span>
+      <br>Graduates 
+    </div>
+  </div>
+  
+  <!-- Work Section -->
+  <div class="fh-container" style="padding:128px 16px" id="work">
+    <h3 class="fh-center">OUR WORK</h3>
+    <p class="fh-center fh-large">What we've done for people</p>
+  
+    <div class="fh-row-padding" style="margin-top:64px">
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_phone.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="A microphone">
+      </div>
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_phone.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="A phone">
+      </div>
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_tablet.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="A drone">
+      </div>
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_tablet.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="Soundbox">
+      </div>
+    </div>
+  
+    <div class="fh-row-padding fh-section">
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_tablet.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="A tablet">
+      </div>
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_phone.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="A camera">
+      </div>
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_phone.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="A typewriter">
+      </div>
+      <div class="fh-col l3 m6">
+        <img src="{% static 'images/tech_phone.jpg' %}" style="width:100%" onclick="onClick(this)" class="fh-hover-opacity" alt="A tableturner">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="fh-modal fh-black" onclick="this.style.display='none'">
+    <span class="fh-button fh-xxlarge fh-black fh-padding-large fh-display-topright" title="Close Modal Image">×</span>
+    <div class="fh-modal-content fh-animate-zoom fh-center fh-transparent fh-padding-64">
+      <img id="img01" class="fh-image">
+      <p id="caption" class="fh-opacity fh-large"></p>
+    </div>
+  </div>
+{% endblock content %}
+
+
+{% block go-to-top %}
+<a href="#home" class="fh-button fh-light-grey"><i class="fa fa-arrow-up fh-margin-right"></i>To the top</a> 
+{% endblock go-to-top %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{% endblock scripts %}
+  

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+
+{% block title %}
+    Create Blog
+{% endblock title %}
+
+
+{% block site-content %}
+    <div class="blog-create">
+        <form action="{% url 'blog_list' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </form>
+    </div>
+{% endblock site-content %}
+    

@@ -1,0 +1,133 @@
+{% extends "main/base.html"%}
+{% load static %}
+{% load socialaccount %}
+
+{% block links %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'main/css/index_programs.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+{% endblock links %}
+  
+{% block title %}
+  Fedora Herald
+{% endblock title %}
+
+
+{% block style %}
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+
+  body, html {
+    height: 100%;
+    line-height: 1.8;
+  }
+
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+  }
+
+  .fh-bar .fh-button {
+    padding: 16px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 945px){
+    .container{
+      margin-top: 100px;
+    }
+  }
+{% endblock style %}
+
+
+{% block content %}
+    <div class="container" style="padding: 80px 60px;">
+      {% include 'main/messages.html' %}
+        <div class="signup-section">
+            <div class="social-media">
+                <h1 style="font-weight: 700;">LOGIN</h1>
+                <br>
+            </div>
+
+            <div class="right-section">
+                 <form class="login" method="POST" action="/accounts/login/">
+                    {% csrf_token %}
+                    <div class="text-field">
+                        {{ form.as_p }}
+                        {% if redirect_field_value %}
+                           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                    </div>
+
+                    <div class="create-account">
+                        <button class="acct-btn" style="width: 60%; margin:auto;">Login</button>
+                        <br>
+                        <p>Don't have an account? <a href="{% url 'account_signup'%}">Sign up</a></p>
+                        <p style="color: #0000ff;"><a href="{% url 'account_reset_password' %}">Forgot password</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="header" style="text-align: center;">
+                <p>-OR-</p>
+            </div>
+
+            <div class="media-btn">
+                <button onclick="window.location.href='/accounts/google/login/?process=login';" class="gb-btn" style="width: 60%; margin: auto;"><img class="gb-img" src="{% static 'images/gb_icon.png' %}" width="30" style="margin-right: 5px;">Sign In with Google</button>
+            </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+  var inputFields = document.querySelectorAll("input");
+  var labelFields = document.querySelectorAll("label");
+  var buttons = document.querySelectorAll("button");
+  var googleImage = document.querySelector(".gb-img")
+
+  for (let button of buttons){
+    button.className += " form-control";
+    button.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = "#0059bf";
+      event.target.style.color = "#fff";
+    });
+    button.addEventListener("mouseleave", (event) => {
+      event.target.style.backgroundColor = "";
+      event.target.style.color = "#000";
+    });
+  }
+
+  for (let inputField of inputFields){
+    if (inputField.type === "checkbox"){
+      inputField.className = "";
+    } else {
+      inputField.className = "form-control";
+    }
+  }
+
+  for (let labelField of labelFields){
+    labelField.className = "form-label";
+  }
+
+  googleImage.addEventListener("mouseleave", (event) => {
+    event.target.style.backgroundColor = "";
+  });
+</script>
+  
+{% endblock scripts %}

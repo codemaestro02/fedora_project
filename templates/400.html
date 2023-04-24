@@ -1,0 +1,105 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Error 400: Bad Request!
+{% endblock %}
+
+{% block links %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/css/index_programs.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+{% endblock links %}
+
+{% block style %}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.fh-bar .fh-button {
+  padding: 16px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 945px){
+  .error{
+    margin: 100px 0px;
+  }
+}
+
+.error{
+  margin: 100px;
+}
+
+.error > .illustration{
+  width: 100%;
+  text-align: center;
+}
+
+.illustration img{
+  width: 60%;
+
+}
+
+.error > .message{
+    text-align: center;
+}
+
+.error h1{
+    margin: 30px;
+    font-weight: 900;
+}
+
+.error p{
+    margin: 15px;
+}
+
+.error .message a{
+  text-decoration: underline;
+}
+
+.error .message a:hover{
+  color: purple;
+  text-decoration: underline;
+}
+
+    
+{% endblock style %}
+    
+
+
+{% block content %}
+    <div class="error">
+        <div class="illustration">
+            <img src="{% static 'images/bad_request.png' %}" alt="">
+        </div>
+        <div class="message">
+            <h1>Bad Request</h1>
+            <p>Oops! You seem to have made a bad request! Not your fault, blame your browser and network.</p>
+            <small><a onclick="history.back()">Kindly return to the previous page</a></small>
+        </div>
+        
+    </div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{% endblock scripts %}
+  

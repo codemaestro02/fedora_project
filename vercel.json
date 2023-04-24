@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "fedora/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "fedora/wsgi.py"
+    }
+  ]
+}

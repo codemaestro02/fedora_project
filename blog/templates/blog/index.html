@@ -1,0 +1,33 @@
+{% extends "blog/base.html"%}
+{% block content %}
+<!-- Site content start -->
+<div class="site-content">
+    <main>
+        <div class="intro">
+            <!-- A picture welcoming the users and Register now button -->
+        </div>
+        <div class="about">
+            <!-- Description of Fedora Herald and their goal -->
+            <h1 style="color: red;">Welcome to the index page</h1>
+        </div>
+        <div class="testimonials">
+            <!-- Testimonials of the past interns -->
+            <ul>
+                {% for blog in blogs %}
+                    <li style="list-style: none;">{{ forloop.counter }}. {{ blog.title }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'blog_list' %}">See More</a>
+           
+                
+        </div>
+    </main>
+
+    <aside>
+        <!-- Lists of Blog Posts -->
+    </aside>
+</div>
+<!-- Site content end -->
+
+
+{% endblock content %}

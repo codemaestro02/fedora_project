@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fedora Herald</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/cropped_fedora_image.png' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+  {% block links %}
+    
+  {% endblock links %}
+
+  <title>
+    {% block title %}
+    
+    {% endblock title %}
+  </title>
+
+<style>
+  {% block style %}
+    
+  {% endblock style %}
+</style>
+
+</head>
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="fh-top" style="z-index: 1000;">
+  <div class="fh-bar fh-white fh-card" id="myNavbar">
+      <img src="{% static 'images/logo.png' %}" alt="logo">
+
+    <!-- Right-sided navbar links -->
+    <div class="fh-right fh-hide-small">
+      <a href="{% url 'home' %}" class="fh-bar-item fh-button"><i class="fa fa-home"></i> Home</a>
+      <a href="{% url 'programs' %}" class="fh-bar-item fh-button"><i class="fa fa-book"></i> Programs</a>
+      <a href="{% url 'about' %}" class="fh-bar-item fh-button"><i class="fa fa-building"></i> About Us</a>
+      <a href="{% url 'blog_index' %}" class="fh-bar-item fh-button"><i class="fa fa-globe"></i> Blog</a>
+      <a href="{% url 'career' %}" class="fh-bar-item fh-button"><i class="fa fa-usd"></i> Careers</a>
+
+      
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}" class="fh-bar-item fh-button"><i class="fa fa-user"></i> Logout</a>
+      {% else %}
+      <a href="{% url 'account_signup' %}" class="fh-bar-item fh-button"><i class="fa fa-user"></i> Sign Up</a>
+      <a href="{% url 'account_login' %}" class="fh-bar-item fh-button"><i class="fa fa-user"></i> Login</a>
+      {% endif %}
+        
+      
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="fh-bar-item fh-button fh-right fh-hide-large fh-hide-medium" onclick="fh_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="fh-sidebar fh-bar-block fh-blue fh-card fh-animate-left fh-hide-medium fh-hide-large" style="display:none" id="mySidebar">
+  <li>
+    <a href="javascript:void(0)" onclick="fh_close()" class="fh-bar-item fh-button fh-large fh-padding-16">Close</a>
+      <a href="#home" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-home"></i> Home</a>
+      <a href="{% url 'programs' %}" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-book"></i> Programs</a>
+      <a href="{% url 'about' %}" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-building"></i> About Us</a>
+      <a href="" onclick="fh_close()" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-globe"></i> Blog</a>
+      <a href="{% url 'career' %}" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-usd"></i> Careers</a>
+
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-user"></i> Logout</a>
+      {% else %}
+      <a href="{% url 'account_signup' %}" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-user"></i> Sign Up</a>
+      <a href="{% url 'account_login' %}" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-user"></i> Login</a>
+      {% endif %}
+      
+      
+  </li>
+</nav>
+
+
+{% block content %}
+  
+{% endblock content %}
+
+
+<!-- Footer -->
+<footer class="fh-center fh-light-blue fh-padding-32">
+  
+  {% block go-to-top %}
+    
+  {% endblock go-to-top %}
+  <div class="fh-xlarge fh-section" style="display: flex; flex-direction: column;">
+    <a href="https://web.facebook.com/fedoraherald1"> <i class="fa fa-facebook-official fh-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/fedoraherald/"> <i class="fa fa-instagram fh-hover-opacity"></i></a>
+    <a href="#"> <i class="fa fa-twitter fh-hover-opacity"></i> </a>
+    <a href="#" style="font-size: 13px; text-decoration: none;">Privacy Policy</a>
+    <span><a href="#" style="font-size: 13px; text-decoration: none;">Terms and Conditions</a></span>
+    <a href="https://linkedin.com/in/fedora-herald-443489235"> <i class="fa fa-linkedin fh-hover-opacity"></i></a>
+  </div>
+</footer>
+
+
+  
+{% block scripts %}
+    
+{% endblock scripts %}
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function fh_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function fh_close() {
+    mySidebar.style.display = "none";
+}
+</>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

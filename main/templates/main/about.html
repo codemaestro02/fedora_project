@@ -1,0 +1,183 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block links %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/index_programs.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+{% endblock links %}
+          
+
+{% block style %}
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+  }
+  body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .card-footer{
+    background-color: #e69e10;
+  }
+
+  .container{
+    margin: 20px 0 0 40px;
+  }
+
+  .fh-sidebar{
+    z-index: 1000;
+  }
+
+  .fh-bar-item{
+    position: relative;
+    bottom: -10px;
+  }
+
+  .story{
+    font-size: 1.15rem;
+  }
+
+  .testimonies{
+    border-radius: 20px;
+  }
+
+  #fact,#fact-add{
+      width: 100%;
+  }
+{% endblock style %} 
+
+
+{% block content %}
+  <section style="margin-top: 100px;">
+    <div class="container-md">
+      <div class="row my-5 justify-content-around align-items-center">
+        <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+          <img class="img-fluid" src="{% static 'images/Araoluwa.jpg' %}" alt="#" style="border-radius: 28px;">
+          <div class="card-footer text-dark text-center justify-content-center mt-2 rounded-pill" style="width: 100%;">
+          Araoluwa Olateju
+          </div>
+        </div>
+        <div class="story col-md-6 col-lg-6 mt-4">
+          <span class="fw-bold">Araoluwa</span> is a believer, graduate of Law, specializing in Human Resource.She currently is 
+          the Managing Partner of FedoraHerald and Partners; A human resources and business consulting firm
+          dedicated to transforming ideas into visionary company through the help of the Holy spirit.
+          She had opportunity to train other people which helped in expressing themselves better. She also
+          had the opportunity to plan the organization's party.
+          She is currently an entrepreneur who is in the business of growing, building and impacting lives
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row g-0" style="margin-left: 10%;">
+      <div class="col-12 col-md-6 mb-2 justify-content-evenly">  
+        <div class="fact" id="fact">
+          <div class="card-body bg-primary p-5 mt-auto" style="border-radius: 23px; width: 90%; z-index: 1;">
+            <h5 class="card-title text-white p-3"><span style="border: 2px solid #e69e10; border-radius: 2px;" class="me-2"></span>Our Vision</h5>
+            <div class="rounded bg-white pt-3 pb-5">
+              <p style="word-spacing: 10px;">We provide training services to help African youth navigate their Career path successfully.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col b-0">  
+        <div class="mt-5" id="fact-add">
+          <div class="card-body p-5" style="background-color: #e69e10; border-radius: 23px; width: 90%;">
+            <h5 class="card-title text-white p-3"><span style="border: 2px solid #fff; border-radius: 2px;" class="me-2"></span>Our Mission</h5>
+            <div class="rounded bg-white pt-3 pb-5 px-3">
+              <p style="word-spacing: 10px;">To Equip 2,000 African youths with the right skill set by the end of 2023.
+                To create a network of diverse intellectual youth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div>
+  <section class="ms-5 my-5">
+    <h5 class="text-primary"><span style="border: 2px solid #e69e10; border-radius: 2px;" class="me-2"></span> Testimonies</h5>
+    <p class="text-primary ms-2 mt-5 fw-bold">We Provide services with the best experience</p>
+    <div class="row justify-content-around">
+      <div class="col-sm-3 mb-3 mb-sm-0">
+        <div class="testimonies card text-start text-dark" style="padding: 10px;">
+          <div class="mt-2 pb-2 ps-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i><span>(5.0)</span>
+          </div>
+          <div class="card-body">
+            <p class="card-text">We provide training services to help African youth navigate their career path successfully.</p>
+            <div>
+              <span>
+                <img src="" class="card-img-top p-4" alt="" style="border-radius: 50%; background: #808080;"><span class="fw-bold"> Prince Seun</span> 
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-3 mb-sm-0">
+        <div class="testimonies card text-start text-dark" style="padding: 10px;">
+          <div class="mt-2 pb-2 ps-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i><span>(5.0)</span>
+          </div>
+          <div class="card-body">
+            <p class="card-text">We provide training services to help African youth navigate their career path successfully.</p>
+            <div>
+              <span>
+                <img src="" class="card-img-top p-4" alt="" style="border-radius: 50%; background: #808080;"><span class="fw-bold"> Abdul-Azeez</span> 
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-3 mb-sm-0">
+          <div class="testimonies card text-start text-dark" style="padding: 10px;">
+            <div class="mt-2 pb-2 ps-3">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i><span>(4.5)</span>
+            </div>
+            <div class="card-body">
+              <p class="card-text">We provide training services to help African youth navigate their career path successfully.</p>
+              <div>
+                <span>
+                  <img src="" class="card-img-top p-4" alt="" style="border-radius: 50%; background: #808080;"><span class="fw-bold"> Lolly</span> 
+                </span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="row justify-content-center mt-5 py-5 bg-light">
+    <h3 class="text-center text-primary fw-bold mb-5">Get Our Newsletter</h3>
+    <div class="d-flex justify-content-center">
+      <input type="email" class="form-control" id="floatingInput" placeholder="Email" style="width: 25%;">
+      <button class="text-white rounded-pill p-2 ms-3" type="submit" style="background-color: #e69e10; border: 1px groove #e69e10;">Subscribe</button>
+    </div>
+  </div>
+{% endblock content %}
+
+
+
+{% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{% endblock scripts %}
+  

@@ -1,0 +1,518 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: product sans;
+}
+
+/* Registration -- Sign Up -- Start */
+
+#small{
+  display: none;
+}
+
+.container{
+  display: inline-block;
+}
+.signup-section{
+  display: inline-block;
+  position: absolute;
+  width: 48%;
+  top: 20%;
+  left: 50%;
+}
+.left-section{
+  width: 28%;
+  padding: 86px 197px 363px 41px;
+  background: #0059bf;
+  border-radius: 0 98px 32px 0;
+}
+h3{
+  color: #fff;
+  text-align: center;
+  margin-top: 51px;
+}
+
+.logo img{
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+div button img{
+  width: 2%;
+}
+
+.header p{
+  text-align: center;
+  margin: 28px 0;
+}
+
+h4 {
+  margin: 0 71px 15px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+input{
+  border: none;
+  border-bottom: 2px solid silver;
+  outline: none;
+  width: 183%;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.gb-btn{
+  width: 30%;
+  padding: 10px;
+  margin-right: 114px;
+  border: 1px groove #fff;
+  background: #fff;
+}
+
+.fb-btn{
+  width: 30%;
+  padding: 10px;
+  border: 1px groove #fff;
+  background: #fff;
+}
+
+.media-btn{
+  text-align: end;
+}
+
+.gb-img{
+  position: absolute;
+  right: 73%;
+  bottom: 50%;
+  width: 5%;
+}
+
+.fb-img{
+  position: absolute;
+  right: 26%;
+  bottom: 54%;
+  width: 3%;
+}
+
+.right-section{
+  position: absolute;
+  left: 11%;
+  margin-top: 22px;
+}
+
+#password{
+  margin-bottom: 56px;
+}
+
+.create-account{
+  position: absolute;
+  left: 62%;
+  width: 95%;
+}
+
+.acct-btn{
+  padding: 7px;
+  margin-bottom: 29px;
+  width: 123%;
+  border: 1px groove #0000ff;
+  border-radius: 10px;
+  color: #fff;
+  background: #0000ff;
+}
+
+
+
+@media screen and (max-width: 1330px){
+    .gb-img{
+    right: 91%;
+  }
+
+  .fb-img{
+    right: 44%;
+  }
+}
+
+@media screen and (max-width: 1324px){
+  .gb-img{
+  right: 74%;
+}
+
+.fb-img{
+  right: 26%;
+}
+}
+
+@media screen and (max-width: 1290px){
+    .gb-img{
+    right: 74%;
+  }
+
+  .fb-img{
+    right: 27%;
+  }
+}
+
+
+@media screen and (max-width: 1240px){
+    .gb-img{
+    right: 94%;
+  }
+
+  .fb-img{
+    right: 46%;
+  }
+}
+
+@media screen and (max-width: 1230px){
+    .gb-img{
+    right: 74%;
+  }
+
+  .fb-img{
+    right: 27%;
+  }
+}
+
+@media screen and (max-width: 1206px){
+    .gb-img{
+    right: 95%;
+  }
+  .gb-btn, .fb-btn {
+    margin-right: 111px;
+  }
+}
+
+@media screen and (max-width: 1206px){
+  .fb-img{
+    right: 46%;
+  }
+}
+
+@media screen and (max-width: 1180px){
+  .gb-img{
+    right: 93%;
+  }
+  .fb-img{
+    right: 45%;
+  }
+  .gb-btn, .fb-btn {
+    margin-right: 105px;
+  }
+}
+@media screen and (max-width: 1160px){
+  .gb-img{
+    right: 92%;
+  }
+  .fb-img{
+    right: 44%;
+  }
+  .gb-btn, .fb-btn {
+    margin-right: 100px;
+    padding-left: 17px;
+  }
+}
+
+@media screen and (max-width: 1150px){
+  .fb-img{
+    right: 45%;
+  }
+}
+
+@media screen and (max-width: 1098px){
+  .gb-img{
+    right: 79%;
+  }
+  .fb-img{
+    right: 38%;
+  }
+  .gb-btn, .fb-btn {
+    margin-right: 60px;
+    padding-left: 17px;
+  }
+}
+
+@media screen and (max-width: 1095px){
+  .gb-img{
+    width: 17%;
+    top: 7%;
+    right: 84%;
+  }
+  .fb-img{
+    width: 12%;
+    top: 17%;
+    right: 87%;
+  }
+  .gb-btn, .fb-btn {
+    width: 34%;
+   position: relative;
+  }
+}
+
+@media screen and (max-width: 1040px){
+  .left-section{
+    width: 22%;
+  }
+  .right-section {
+    left: -2%;
+  }
+  .gb-btn, .fb-btn {
+   left: -4%;
+  }
+  .fb-btn{
+    padding-left: 14px;
+    width: 37%;
+  }
+  .fb-img {
+    width: 9%;
+    top: 31%;
+    right: 91%;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .left-section {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 899px){
+  .left-section {
+    display: none;
+  }
+  #small{
+    display: block;
+    width: 30%;
+  }
+  .signup-section{
+    left: 26%;
+  }
+  .fb-btn{
+    position: absolute;
+    left: 53%;
+    width: 44%;
+  }
+  .fb-img {
+    right: 88%;
+  }
+  .gb-btn{
+    position: absolute;
+    width: 44%;
+  }
+  .header p {
+    margin: 77px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .fb-btn {
+    width: 46%;
+  }
+  #small{
+    display: block;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 758px){
+  .fb-btn,.gb-btn {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .fb-btn,.gb-btn {
+    width: 52%;
+  }
+}
+
+@media screen and (max-width: 663px){
+  .fb-btn,.gb-btn {
+    width: 55%;
+  }
+  .right-section {
+    left: -30%;
+  }
+}
+
+@media screen and (max-width: 630px){
+  .fb-btn,.gb-btn {
+    width: 58%;
+  }
+  .fb-btn{
+    margin-left: 24px;
+  }
+}
+
+@media screen and (max-width: 590px){
+  .fb-btn,.gb-btn {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 574px){
+  .fb-btn,.gb-btn {
+    width: 64%;
+  }
+  .fb-btn{
+    margin-left: 29px;
+  }
+}
+
+@media screen and (max-width: 540px){
+  .signup-section {
+    left: 20%;
+  }
+  .fb-btn {
+    margin-left: 29px;
+    width: 71%;
+    padding-left: 8px;
+  }
+}
+
+@media screen and (max-width: 540px){
+  input {
+    width: 144%;;
+  }
+  .create-account {
+    left: 24%;
+  }
+}
+
+@media screen and (max-width: 510px){
+  h4{
+    width: 100%;
+  }
+  .fb-btn {
+    width: 80%;
+  }
+  .gb-btn {
+    width: 80%;
+    left: -23%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .fb-btn {
+    width: 84%;
+  }
+  #small{
+    display: block;
+    width: 51%;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .fb-btn {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .fb-btn {
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 389px){
+  .fb-btn {
+    width: 98%;
+  }
+  input {
+    width: 154%;
+    font-size: 14px;
+  }
+  .fb-btn, .gb-btn {
+    font-size: 9px;
+    font-weight: 800;
+  }
+  .gb-btn {
+    width: 66%;
+  }
+  .fb-btn {
+    width: 76%;
+  }
+  .create-account {
+    left: 5%;
+  }
+  div p{
+    width: 128%;
+  }
+}
+
+@media screen and (max-width: 361px){
+  h4{
+    width: 112%;
+  }
+}
+
+@media screen and (max-width: 354px){
+  .gb-btn {
+    width: 68%;
+  
+  }
+}
+
+@media screen and (max-width: 345px){
+  .gb-btn {
+    width: 70%;
+  }
+  .fb-btn {
+    width: 78%;
+  }
+}
+
+@media screen and (max-width: 333px){
+  .gb-btn {
+    width: 74%;
+  }
+  .fb-btn {
+    width: 82%;
+  }
+}
+
+@media screen and (max-width: 321px){
+  h4 {
+    width: 122%;
+  }
+  .gb-btn {
+    width: 80%;
+  }
+  .fb-btn {
+    width: 88%;
+  }
+  #small{
+    display: block;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 295px){
+  h4 {
+    width: 132%;
+  }
+  input {
+    width: 143%;
+  }
+}
+
+@media screen and (max-width: 290px){
+  .gb-btn {
+    width: 90%;
+  }
+  .fb-btn {
+    width: 90%;
+  }
+  div p {
+    width: 131%;
+  }
+}
+
+/* Registration -- Sign Up -- End */
+
+/* Registration  -- Login -- Start */
+
+
+/* Registration  -- Login -- End */

@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{% static './images/fedora_image.png' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+	<title>Fedora Herald</title>
+	<style>
+		section{
+			padding: 60px 0;
+		}
+	</style>
+</head>
+<body style="overflow-x: hidden;">
+	<nav class="navbar navbar-expand-md bg-body-tertiary navbar-light">
+		<div class="container">
+			<img class="navbar-brand img-fluid" href="#" src="{% static './images/fedora_image.png' %}">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#" style="color: #db940e;">Explore Jobs</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" style="color: #db940e;">Internships</a>
+				</li>
+
+				
+				{% if user.is_authenticated %}
+					<li class="nav-item">
+						<a class="nav-link" style="color: #db940e;" href="{% url 'logout' %}">Logout</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" style="color: #db940e;" href="{% url 'account_login' %}">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" style="color: #db940e;" href="account_signup">Sign up</a>
+					</li>
+					
+				{% endif %}
+
+				
+				{% if user.is_admin %}
+					<li class="nav-item ms-3">
+						<a class="btn" style="background-color: #110edb; border-radius: 20px;">Post a Job</a>
+					</li>
+				{% endif %}
+					
+					
+				
+				
+			</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div>
+		<img src="{% static 'images/1.jpg' %}" class="img-fluid" alt="top-pic">
+	</div>
+
+	<div class="row my-5 mx-2 justify-content-center">
+		<div class="col-md-5 col-lg-9">
+			<div class="input-group mx-auto">
+				<span class="input-group-text">
+					<i class="bi bi-Search bg-dark"></i>						
+				</span>
+				<input class="form-control me-2 mx-auto" type="search" placeholder="Search by role or keyword" aria-label="Search">
+			</div>
+		</div>
+	</div>
+	
+	<div class="bg-primary pt-5">
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #db940e;">
+		<div class="justify-content-center ps-4 mx-auto">
+			<ul class="nav nav-pills py-3">
+				<li class="nav-item dropdown mx-3 my-3">
+					<a class="nav-link dropdown-toggle bg-light text-dark" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Jobs Functions
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+					  <li><a class="dropdown-item" href="#">Action</a></li>
+					  <li><a class="dropdown-item" href="#">Another action</a></li>
+					  <li><hr class="dropdown-divider"></li>
+					  <li><a class="dropdown-item" href="#">Something else here</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown mx-3 my-3">
+					<a class="nav-link dropdown-toggle bg-light text-dark" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Industries
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+					  <li><a class="dropdown-item" href="#">Action</a></li>
+					  <li><a class="dropdown-item" href="#">Another action</a></li>
+					  <li><hr class="dropdown-divider"></li>
+					  <li><a class="dropdown-item" href="#">Something else here</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown  mx-3 my-3">
+					<a class="nav-link dropdown-toggle bg-light text-dark" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Locations
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+					  <li><a class="dropdown-item" href="#">Action</a></li>
+					  <li><a class="dropdown-item" href="#">Another action</a></li>
+					  <li><hr class="dropdown-divider"></li>
+					  <li><a class="dropdown-item" href="#">Something else here</a></li>
+					</ul>
+				</li>
+				<li class="nav-item  mx-3 my-3">
+					<a class="nav-link active" href="#" style="background-color: #110edb;">Search</a>
+				</li>
+			</ul>
+		</div>
+		</nav>
+
+		<div class="col-md-10 col-lg-12 justify-content-around ps-4">
+			<p class="text-light ms-5 pt-5">Popular Searches</p>
+			<ul class="nav nav-pills pt-3 pb-5">
+				<li class="nav-item mx-4 my-3">
+				<a class="nav-link active" href="#" style="background-color: #db940e;">Accounting</a>
+				</li>
+				<li class="nav-item mx-5 my-3">
+				<a class="nav-link active" href="#" style="background-color: #db940e;">Lagos</a>
+				</li>
+				<li class="nav-item mx-5 my-3">
+					<a class="nav-link active" aria-current="page" href="#" style="background-color: #db940e;">Internships</a>
+				</li>
+				<li class="nav-item mx-5 my-3">
+					<a class="nav-link active" href="#" style="background-color: #db940e;">Graduate</a>
+				</li>
+				<li class="nav-item mx-5 my-3">
+					<a class="nav-link active" href="#" style="background-color: #db940e;">Full Time</a>
+				</li>
+				<li class="nav-item mx-4 my-3">
+					<a class="nav-link active" href="#" style="background-color: #db940e;">Remote</a>
+				</li>
+			</ul>
+		</div>
+	</div>	
+
+	<section class="m-2 bg-light">
+		<div class="text-center">Solve the next generation of manufacturing, engineering and operational challenges as we work to secure a clean energy future.</div>
+        <div class="text-dark text-center">
+            <h2 class="py-2">Featured Jobs</h2>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-sm-3 mb-3 mb-sm-0">
+              <div class="card text-start text-dark">
+                <img src="{% static 'images/3.jpg' %}" class="card-img-top p-2" alt="img">
+                <div class="card-body">
+                  <h3 class="card-title">Announcement</h5>
+                    <p class="card-text">Join a global team of expert engineers, production workers and safety building some of the most exciting cars on the planet.</p>
+					<a href="#" class="text-dark">See Opportunities</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 mb-3 mb-sm-0">
+                <div class="card text-start text-dark">
+                  <img src="{% static 'images/3.jpg' %}" class="card-img-top p-2" alt="img">
+                  <div class="card-body">
+                    <h3 class="card-title">Software Developer</h3>
+                    <p class="card-text">Join a global team of expert engineers, production workers and safety building some of the most exciting cars on the planet.</p>
+                    <a href="#" class="text-dark">See Opportunities</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-3 mb-3 mb-sm-0">
+                <div class="card text-start text-dark">
+                  <img src="{% static 'images/3.jpg' %}" class="card-img-top p-2" alt="img">
+                  <div class="card-body">
+                    <h3 class="card-title">Engineer</h3>
+                    <p class="card-text">Join a global team of expert engineers, production workers and safety building some of the most exciting cars on the planet.</p>
+                    <a href="#" class="text-dark">See Opportunities</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+		<div class="row justify-content-around mt-5">
+			<div class="col text-end">
+				<p class="fw-bold">Working at Fedora</p>
+				<a href="#" class="text-center px-4 py-1" style="border: 2px solid #db940e; text-decoration: none;">View Jobs</a>
+			</div>
+			<p class="col pe-5">It doesn't matter where you come from, where you went to school or what industry you're in - if you've done exceptional work, join us to rethink the future of sustainable energy and manufacturing.</p>
+		</div>
+    </section>
+
+
+	<div class="row my-0">
+		<div style="padding: 20px;">
+			<div class="row">
+				<div class="col text-center">
+					<p class="fw-bold" style="color: #340cc5;">Student Opportunities</p>
+					<a href="#" class="btn fw-bold" style="border: 2px solid #e4980b; color: #340cc5;">View Internships</a>
+				</div>
+				<p class="col text-white fw-bold bg-primary py-4">
+					Fedora interns tackle hands-on projects and design challenges. Constantly upending conventions and pushing boundaries.
+				</p>
+			</div>
+			<img src="{% static 'images/3.jpg' %}" class="img-fluid" alt="img">
+		</div>
+	</div>
+
+	<div class="row bg-primary p-5 me-0">
+		<div style="padding: 20px;">
+			<h4 class="text-white fw-bold">Our Community</h4>
+			<p class="text-white">
+				We refuse to do things the way they've always been done. Motivated by a collective commitment to a sustainable future, we work to build an inclusive environment in which everyone-regardless of gender, race, religion, age or background-can succeed.
+			</p>
+			<img src="{% static 'images/why.jpg' %}" class="img-fluid" alt="img">
+		</div>
+		<div class="row">
+			<div class="col display-3 text-white fw-bold">
+				Get Involved
+			</div>
+			<div class="col text-white lead" style="word-spacing: 7px;">
+				We offer a number of opportunities to find your community at Fedora Herald.
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<img src="{% static 'images/2.jpg' %}" class="img-fluid" alt="img">
+	</div>
+
+	<div class="bg-primary px-4 pb-5">
+		<p class="text-center pt-5 fw-bold text-white">Join Us</p>
+		<div class="d-flex justify-content-center pb-4">
+			<button href="#" class="text-dark fw-bold mx-4" style="background-color: #db940e; border:2px solid #db940e">View Jobs</button>
+			<button href="#" class="text-dark fw-bold mx-4" style="background-color: #fff; border:2px solid #db940e;">View Internships</button>
+		</div>
+		<small class="text-center text-white">
+			Fedora Herald is an Equal Opportunity / Affirmative Action employer committed to diversity in the workplace. All quanlified applicants will receive consideration for employment without
+			regard to race, color, religion, sex, sexual orientation, age, national origin, disablity, protected veteran status, gender identity or any other factor protected by applicable federal, state or local laws.
+		</small>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

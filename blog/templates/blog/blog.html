@@ -1,0 +1,57 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block title %}
+  Blog: Fedora Herald
+{% endblock title %}
+  
+
+{% block site-content %}
+  <div class="row">  
+    {% for blog in blogs %}
+      
+    <div class="col-md-4">
+      <div class="card card-blog">
+        <div class="card-img">
+          <a href="{% url 'blog_detail' blog.slug %}"><img src="{{ blog.cover.url }}" alt="" class="img-fluid"></a>
+        </div>
+        <div class="card-body">
+          <div class="card-category-box">
+            <div class="card-category">
+              <h6 class="category">{{ blog.category }}</h6>
+            </div>
+          </div>
+          <h3 class="card-title"><a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a></h3>
+          <p class="card-description">
+            {{ blog.description.safe }}
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="post-author">
+            <a href="#">
+              <img src="{% static 'images/testimonial-2.jpg' %}" alt="" class="avatar rounded-circle">
+              
+              {% if blog.author.first_name and blog.author.last_name %}
+                <span class="author">{{ blog.author.first_name }} {{ blog.author.last_name }}</span>
+                {% else %}
+                <span class="author">{{ blog.author.username }}</span>
+              {% endif %}
+                
+            </a>
+          </div>
+          <div class="post-date">
+            <span class="ion-ios-clock-outline"></span> {{ blog.updated|date }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+
+  <div class="more">
+    <h4><a href="{% url 'blog_list' %}">See More</a></h4>
+  </div>
+{% endblock site-content %}
+  
