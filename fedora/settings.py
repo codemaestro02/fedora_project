@@ -12,10 +12,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
+# from dotenv import Dotenv
+from dotenv import main
 
 import os
 
 import re
+
+main.load_dotenv()
+# env = Dotenv('.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-1^32yv*2%_dhf4!9v4!j)ng^ny0uq#20(we^u$r%@*o@fvpn#q'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-1^32yv*2%_dhf4!9v4!j)ng^ny0uq#20(we^u$r%@*o@fvpn#q')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # with open('./secret_key.txt') as f:
 #     SECRET_KEY = f.read().strip()
@@ -35,7 +39,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-1^32yv*2%_dhf4
 DEBUG = False
 # DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app']
 
 CSRF_COOKIE_SECURE = True
 
@@ -67,7 +71,7 @@ INSTALLED_APPS = [
     'author',
     'programs',
     'career',
-    'psycopg2',
+    # 'psycopg2',
     
 ]
 
@@ -117,12 +121,13 @@ WSGI_APPLICATION = 'fedora.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fedora_herald_project',
-        'USER': 'postgres',
-        'PASSWORD': 'Mohdawwal02!',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': os.getenv('DATABASE_URL'),
+        'NAME': os.getenv('PGDATABASE'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('PGPASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT'),
     }
 }
 
@@ -165,9 +170,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = 'static/'
 
 #Add this in your settings.py file:
-STATICFILES_DIRS = [
-    BASE_DIR / '_static'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / '_static'
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -4,3 +4,6 @@ __pycache__/
 migrations/
 db.sqlite3
 *.pyc
+.env
+secret_key.txt
+.vercel
