@@ -106,7 +106,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fedora.wsgi.application'
+WSGI_APPLICATION = 'fedora.wsgi.app'
 
 
 # Database
