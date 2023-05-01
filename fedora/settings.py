@@ -71,7 +71,6 @@ INSTALLED_APPS = [
     'author',
     'programs',
     'career',
-    # 'psycopg2',
     
 ]
 
@@ -223,8 +222,6 @@ ACCOUNT_FORMS = {'signup': 'users.signupform.MyCustomSignupForm'}
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False
 ACCOUNT_SESSION_REMEMBER = "None"
 ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'
-# ACCOUNT_USER_MODEL_USERNAME_FIELD = 'email'
-# ACCOUNT_USER_MODEL_EMAIL_FIELD = 'email'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True 
@@ -267,11 +264,11 @@ AUTHOR_CREATED_BY_FIELD_NAME = "author"
 AUTHOR_UPDATED_BY_FIELD_NAME = "updated"
 
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-secondary',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
 }
 
 

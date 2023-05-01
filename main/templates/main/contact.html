@@ -1,0 +1,358 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block links %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'main/css/index_programs.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+{% endblock links %}
+
+
+{% block title %}
+    Contact Us: Fedora Herald
+{% endblock title %}
+    
+          
+
+{% block style %}
+body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  *{
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  body, html {
+    height: 100%;
+    line-height: 1.8;
+  }
+
+  .row{
+    width: 100vw;
+    vertical-align: middle;
+    margin: 0;
+    
+  }
+
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+  }
+
+  .fh-bar .fh-button {
+    padding: 16px;
+  }
+
+
+  .intro{
+    background: url("{% static 'images/contact_background.jpg' %}") 0 0 scroll;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+    position: relative;
+  }
+
+  .caption{
+    width: 100%;
+    height: 100%;
+    background: rgba(105, 105, 105, 0.8);
+    padding: 200px 100px;
+    color: white;
+  }
+
+{% endblock style %}
+
+
+{% block contact-style %}
+    <style>
+        .caption input{
+            max-width: 60%;
+            min-width: 150px;
+        }
+
+        .contact-container{
+            margin: auto;
+        }
+
+        .contact-options{
+            position: absolute;
+            top: 60vh;
+            left: 10vw;    
+            z-index: 100;
+            width: 80%;
+            background-color: white;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 1px 1px 6px 5px rgb(105, 105, 105, 0.6);
+            font-weight: 1.2rem;
+        }
+
+        .contact-options-header{
+            background-color: rgb(105, 105, 105);
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .contact-options-header h3{
+            font-weight: 600;
+        }
+
+        .contact-options-header .btn{
+            width: 100px;
+            font-weight: 700;
+        }
+
+        .contact-options-body{
+            padding: 40px;
+            
+        }
+
+        .contact-options-body form{
+            display: grid;
+            row-gap: 20px;
+        }
+
+        .contact-options-footer{
+            width: 100%;
+            border-radius: 0 0 10px 10px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .more-help{
+            margin-top: 600px;
+            padding: 50px 50px 20px;
+            text-align: center;
+        }
+
+        .more-help h5{
+            font-weight: 600;
+        }
+
+        .more-help-options{
+            display: flex;
+            width: 100%;
+            margin: 50px auto;
+            justify-content: space-evenly;
+        }
+
+        .more-help-options > div{
+            padding: 25px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            column-gap: 40px;
+            width: 40%;
+            box-shadow: 1px 1px 6px;
+        }
+
+        .more-help-options .icons{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .more-help-options .social-platforms .icons{
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            margin: auto;
+        }
+
+
+        .more-help-options .direct-contact .icons{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 100%;
+            text-align: left;
+            line-height: 30px;
+        }
+
+
+        .more-help-options a{
+            text-decoration: none;
+        }
+
+        .more-help-options a:hover{
+            text-decoration: underline;
+        }
+
+
+        @media screen and (min-width: 600px) and (max-width: 945px) {
+            .more-help-options{
+                column-gap: 0;
+            }
+
+            .more-help-options > div{
+                flex-direction: column;
+                text-align: center;
+                row-gap: 40px;
+                width: 40%;
+                box-shadow: 1px 1px 6px;
+            }
+
+            
+        }
+
+        @media screen and (max-width: 600px){
+
+
+            .contact-options{
+                top: 50vh;
+                left: 10vw;    
+            }
+
+            .more-help-options{
+                flex-direction: column;
+                align-items: center;
+                row-gap: 40px;
+            }
+
+
+            .more-help-options > div{
+                padding: 25px;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                text-align: center;
+                column-gap: 40px;
+                width: 50%;
+                box-shadow: 1px 1px 6px;
+            }
+        }
+
+    </style>
+{% endblock contact-style %}
+    
+
+
+{% block content %}
+    <div class="row col-md-12">
+        <div class="intro col-md-12">
+            <div class="caption col-md-12">
+                <h2>How can we help?</h2>
+                <form action="{% url 'search' %}" method="get">
+                    <input type="search" class="form-control" name="contact-question" id="contact-question" placeholder="Talk to us">
+                </form>
+            </div>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-options">
+                <div class="contact-options-header">
+                    <div class="not-loggedin">
+                        <h3>Log in for personalized help</h3>
+                        <p>Don't have an account? <a href="{% url 'account_signup' %}" target="_blank" rel="noopener noreferrer">Create your account</a></p>
+                    </div>
+                    <div class="login-button">
+                        <a href="{% url 'account_login' %}" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">Log in</button></a>
+                    </div>
+                    
+                </div>
+                <div class="contact-options-body">
+                    <div class="contact-form">
+                        <form action="#" method="post" id="contact-form" name="contact-form">
+                            {% csrf_token %}
+                            <div class="contact-form-email">
+                                <label for="contact-email">Your Email</label>
+                                <input class="form-control" type="email" name="contact-email" id="contact-email">
+                            </div>
+                            <div class="contact-form-name">
+                                <label for="contact-name">Your Name</label>
+                                <input class="form-control" type="text" name="contact-name" id="contact-name" placeholder="Preferably your first name">
+                            </div>
+                            <div class="contact-form-message">
+                                <label for="contact-message">Your Message</label>
+                                <textarea class="form-control" name="contact-message" id="contact-message" cols="30" rows="10" placeholder="What do you want to tell us?"></textarea>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="contact-options-footer">
+                    <div class="notfound">
+                        <h6>Didn't find what you were looking for?</h6>
+                        <p>Browse through our all of our blog articles</p>
+                    </div>
+                    <div class="blog-button">
+                        <a href="{% url 'blog_index' %}" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">View our Blogs</button></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="more-help">
+                <h5>Still need our help?</h5>
+                <p>Reach out to our social media platforms or call us directly</p>
+            </div>
+            <div class="more-help-options">
+                <div class="social-platforms">
+                    <div class="illustration">
+                        <img src="{% static 'images/illustration-social-media.svg' %}" alt="">
+                    </div>
+                    <div class="info">
+                        <h4>Reach out to us</h4>
+                        <p>We are on social media 24/7, always ready to engage online with our ever- vibrant team. Send us a message on:</p>
+                        <div class="icons">
+                            <a href="https://web.facebook.com/fedoraherald1"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/fedoraherald/"><i class="fa fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in/fedora-herald-443489235"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="direct-contact">
+                    <div class="illustration">
+                        <img src="{% static 'images/illustration-contact-us.svg' %}" alt="">
+                    </div>
+                    <div class="info">
+                        <h4>Contact Us</h4>
+                        <p>We are at our stations 24/7, always ready to engage offline with our ever- vibrant team. Call us directly or send us a mail at:</p>
+                        <div class="icons">
+                            <a href="tel:+2348100000000"><i class="fa fa-phone"></i> +2348100000000</a>
+                            <a href="mailto:fedoraherald@gmail.com"><i class="fa fa-envelope"></i> fedoraherald@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block go-to-top %}
+<a href="#home" class="fh-button fh-light-grey"><i class="fa fa-arrow-up fh-margin-right"></i>To the top</a> 
+{% endblock go-to-top %}
+
+{% block scripts %}
+
+{% endblock scripts %}
+  
+
+    
+    
