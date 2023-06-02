@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "fedora/wsgi.py",
+      "src": "./fedora/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.8" }
     }
@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "fedora/wsgi.py"
+      "dest": "./fedora/wsgi.py"
     }
   ]
 }
