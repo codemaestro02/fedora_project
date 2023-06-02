@@ -4,6 +4,11 @@
       "src": "./fedora/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.8" }
+    },
+    {
+      "src": "./fedora/wsgi.py",
+      "use": "@vercel/postgres",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.8" }
     }
   ],
   "routes": [
