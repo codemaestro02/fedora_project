@@ -263,20 +263,36 @@ body,
         
         <div class="contact-container">
             <div class="contact-options">
-                <div class="contact-options-header">
-                    <div class="not-loggedin">
-                        <h3>Log in for personalized help</h3>
-                        <p>Don't have an account? <a href="{% url 'account_signup' %}" target="_blank" rel="noopener noreferrer">Create your account</a></p>
+                
+                {% if not user.is_authenticated %}
+                    <div class="contact-options-header">
+                        <div class="not-loggedin">
+                            <h3>Log in for personalized help</h3>
+                            <p>Don't have an account? <a href="{% url 'account_signup' %}" target="_blank" rel="noopener noreferrer">Create your account</a></p>
+                        </div>
+                        <div class="login-button">
+                            <a href="{% url 'account_login' %}" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">Log in</button></a>
+                        </div>
+                        
                     </div>
-                    <div class="login-button">
-                        <a href="{% url 'account_login' %}" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">Log in</button></a>
-                    </div>
+                {% endif %}
                     
-                </div>
+                
                 <div class="contact-options-body">
                     <div class="contact-form">
                         <form action="#" method="post" id="contact-form" name="contact-form">
                             {% csrf_token %}
+                            
+                            {% if user.is_authenticated %}
+                            <div class="contact-form-email">
+                                <label for="contact-email">Your Email</label>
+                                <input class="form-control" type="email" value="{{ user.email }}" name="contact-email" id="contact-email">
+                            </div>
+                            <div class="contact-form-name">
+                                <label for="contact-name">Your Name</label>
+                                <input class="form-control" type="text" value="{{ user.first_name }}" name="contact-name" id="contact-name" placeholder="Preferably your first name">
+                            </div>
+                            {% else %}
                             <div class="contact-form-email">
                                 <label for="contact-email">Your Email</label>
                                 <input class="form-control" type="email" name="contact-email" id="contact-email">
@@ -285,6 +301,8 @@ body,
                                 <label for="contact-name">Your Name</label>
                                 <input class="form-control" type="text" name="contact-name" id="contact-name" placeholder="Preferably your first name">
                             </div>
+                            {% endif %}
+                                
                             <div class="contact-form-message">
                                 <label for="contact-message">Your Message</label>
                                 <textarea class="form-control" name="contact-message" id="contact-message" cols="30" rows="10" placeholder="What do you want to tell us?"></textarea>

@@ -8,6 +8,6 @@ from .views import about, index, contact, search
 urlpatterns = [
     path("", index, name="home"),
     path("about/", about, name="about"),
-    path("search/<str:keywords>", search, name="search"),
+    path("search/", search, name="search"),
     path("contact-us/", contact, name="contact"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

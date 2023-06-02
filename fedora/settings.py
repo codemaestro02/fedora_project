@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 #     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app']
@@ -121,12 +121,12 @@ WSGI_APPLICATION = 'fedora.wsgi.app'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': os.getenv('DATABASE_URL'),
-        'NAME': os.getenv('PGDATABASE'),
-        'USER': os.getenv('PGUSER'),
-        'PASSWORD': os.getenv('PGPASSWORD'),
-        'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT'),
+        # 'URL': os.getenv('DATABASE_URL'),
+        'NAME': os.getenv('DBNAME'),
+        'USER': os.getenv('DBUSER'),
+        'PASSWORD': os.getenv('DBPASSWORD'),
+        'HOST': os.getenv('DBHOST'),
+        'PORT': os.getenv('DBPORT'),
     }
 }
 
@@ -164,14 +164,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'static'
+# STATIC_ROOT = BASE_DIR / 'static'
 
 STATIC_URL = 'static/'
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
 #Add this in your settings.py file:
-# STATICFILES_DIRS = [
-#     BASE_DIR / '_static'
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -203,7 +208,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'email',
         ],
         'AUTH_PARAMS': {
-            'access_type': 'online',
+            'access_type': 'offline',
             'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         },
         'APP': {
@@ -217,16 +222,31 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-ACCOUNT_FORMS = {'signup': 'users.signupform.MyCustomSignupForm'}
+ACCOUNT_FORMS = {
+    'signup': 'users.signupform.MyCustomSignupForm',
+    'login':'allauth.account.forms.LoginForm',
+    'reset_password': 'allauth.account.forms.ResetPasswordForm',
+    'change_password': 'allauth.account.forms.ChangePasswordForm',   
+}
 
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False
 ACCOUNT_SESSION_REMEMBER = "None"
 ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_REQUIRED = True 
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+ACCOUNT_EMAIL_CONFIRMATION_HMAC = True
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http"
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Site]"
 ACCOUNT_ADAPTER = 'users.adapter.MyAccountAdapter'
 ACCOUNT_USERNAME_VALIDATORS = 'users.validators.custom_username_validators'
+
+SOCIALACCOUNT_ADAPTER = "allauth.socialaccount.adapter.DefaultSocialAccountAdapter"
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_EMAIL_VERIFICATION = ACCOUNT_EMAIL_VERIFICATION
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = '/accounts/login/'

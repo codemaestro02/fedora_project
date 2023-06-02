@@ -34,7 +34,7 @@ def search(request):
                         all_queries = all_queries & keyword_query
 
         faqs = Question.objects.filter(all_queries).distinct()
-        context = {'faqs': faqs}
+        context = {'faqs': faqs, 'keywords': keywords}
         return render(request, 'main/contact.html', context)
     else:  # no data submitted
         context = {}

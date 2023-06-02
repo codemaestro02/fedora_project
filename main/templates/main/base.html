@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="{% static 'images/cropped_fedora_image.png' %}">
+  <link rel="shortcut icon" href="{% static 'images/cropped_fedora_image.png' %}" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
   {% block links %}
@@ -35,10 +36,10 @@
 <!-- Navbar (sit on top) -->
 <div class="fh-top" style="z-index: 1000;">
   <div class="fh-bar fh-white fh-card" id="myNavbar">
-      <img src="{% static 'images/logo.png' %}" alt="logo">
+    <img src="{% static 'images/logo.png' %}" alt="logo" style="padding-bottom: 10px;">
 
     <!-- Right-sided navbar links -->
-    <div class="fh-right fh-hide-small">
+    <div class="fh-right fh-hide-medium fh-hide-small" style="padding-top: 15px;">
       <a href="{% url 'home' %}" class="fh-bar-item fh-button"><i class="fa fa-home"></i> Home</a>
       <a href="{% url 'programs' %}" class="fh-bar-item fh-button"><i class="fa fa-book"></i> Programs</a>
       <a href="{% url 'about' %}" class="fh-bar-item fh-button"><i class="fa fa-building"></i> About Us</a>
@@ -58,14 +59,14 @@
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-    <a href="javascript:void(0)" class="fh-bar-item fh-button fh-right fh-hide-large fh-hide-medium" onclick="fh_open()">
+    <a href="javascript:void(0)" class="fh-bar-item fh-button fh-right fh-hide-large" onclick="fh_open()" style="padding: 21px;  ">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 </div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="fh-sidebar fh-bar-block fh-blue fh-card fh-animate-left fh-hide-medium fh-hide-large" style="display:none; z-index: 2000;" id="mySidebar">
+<nav class="fh-sidebar fh-bar-block fh-blue fh-card fh-animate-left fh-hide-large" style="display:none; z-index: 2000;" id="mySidebar">
   <li>
     <a href="javascript:void(0)" onclick="fh_close()" class="fh-bar-item fh-button fh-large fh-padding-16">Close</a>
       <a href="#home" onclick="fh_close()" class="fh-bar-item fh-button"><i class="fa fa-home"></i> Home</a>
